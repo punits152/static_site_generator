@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from asyncio.events import BaseDefaultEventLoopPolicy
 import os
 from pathlib import Path
 
@@ -121,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 SITE_PAGES_DIRECTORY = BASE_DIR/"site_pages/pages"
+
+#to store the static data for deployment purposes
+SITE_OUTPUT_DIRECTORY = os.path.join(BASE_DIR/"site_pages/","_build")
+STATIC_ROOT = os.path.join(BASE_DIR/"site_pages","_build","static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
