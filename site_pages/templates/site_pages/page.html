@@ -4,6 +4,8 @@
     {{block.super}}-{{slug|capfirst}}
 {% endblock title %}
 
+{% block body-id %}{{ slug|slugify }}{% endblock %}
+
 {% block content %}
     {% include page %}
 {% endblock content %}
