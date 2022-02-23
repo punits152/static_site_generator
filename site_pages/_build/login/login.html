@@ -9,7 +9,7 @@
 
     <title>
         
-     Rapid Prototypes -Index
+     Rapid Prototypes -Login
 
     </title>
 
@@ -19,7 +19,7 @@
 
 
 
-<body id="index">
+<body id="login">
     
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -35,7 +35,7 @@
             
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li >
                             <a href="/site/index">Home</a>
                         </li>
                         <li >
@@ -43,7 +43,7 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li >
+                        <li class="active">
                             <a href="/site/login/">Login</a>
                         </li>
                     </ul>
@@ -54,37 +54,26 @@
     
 
     
-    <div class="jumbotron">
     <div class="container">
-        <h1>Welcome To the Site of a Self-Learner</h1>
-        <p>I am sure that if you made it up this far we will certainly reach our goals together</p>
-    </div>
-</div>
-<div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-6">
-            <h2>Contact</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>
-                <a class="btn btn-default" href="/site/contact/" role="button">
-                        Contact us Â»
-                </a>
-            </p>
-        </div>
+        <form class="form-signup col-md-6 col-md-offset-3" role="form">
+            
+            <h2 class="form-signin-heading">Login to Your Account</h2>
+            
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" autocomplete="off" >
+            </div>
+            
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="" autocomplete="off" >
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            </div>
+        </form>
     </div>
 </div>
-
-<hr>
-
-<footer>
-    <div class="container">
-        <p>&copy; Your Company 2022</p>
-    </div>
-</footer>
 
 
     <script src="/static/site_pages/js/jquery.min.js"></script>

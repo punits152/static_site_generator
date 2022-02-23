@@ -45,7 +45,9 @@ class Command(BaseCommand):
 
             client = Client()
 
-            for page in get_pages():
+            pages = get_pages()
+
+            for page in pages:
                 url = reverse('page',kwargs={"slug":page})
 
                 response = client.get(url)
@@ -56,7 +58,8 @@ class Command(BaseCommand):
                     output_dir = os.path.join(settings.SITE_OUTPUT_DIRECTORY,page)
                     os.makedirs(output_dir)
 
-                with open(os.path.join(output_dir,'index.html'),'wb') as f:
+                with open(os.path.join(output_dir,f"{page}.html"),'wb') as f:
+                    print(page)
                     f.write(response.content)
 
 
