@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 
 <DOCTYPE html>
 <html lang="en">
@@ -11,8 +12,11 @@
         {% block title %} Rapid Prototypes {% endblock title %}
     </title>
 
+    {% compress css %}
     <link rel='stylesheet' href = "{% static 'site_pages/css/bootstrap.min.css' %}"
     <link rel='stylesheet' href = "{% static 'site_pages/css/site.css' %}">
+    {% endcompress %}
+
 </head>
 
 
@@ -36,6 +40,9 @@
                         <li {% if slug == 'index' %}class="active"{% endif %}>
                             <a href="{% url 'homepage_right' %}">Home</a>
                         </li>
+                        <li {% if slug == 'pricing' %}class="active"{% endif %}>
+                            <a href="{% url "page" "pricing" %}">Pricing</a>
+                        </li>
                         <li {% if slug == 'contact' %}class="active"{% endif %}>
                             <a href="{% url 'page' 'contact' %}">Contact</a>
                         </li>
@@ -53,8 +60,10 @@
 
     {% block content %}{% endblock content %}
 
+    {% compress js %}
     <script src="{% static 'site_pages/js/jquery.min.js' %}"></script>
     <script src="{% static 'site_pages/js/bootstrap.min.js' %}"></script>
+    {% endcompress %}
 
 </body>
 </html>

@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-jm=bj2oq2%zw@03)o%j-g%++h$+-^9qdizh%^1=m0qz_46%@8s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testserver']
+ALLOWED_HOSTS = [
+    
+]
 
 
 # Application definition
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'site_pages'
+    'site_pages',
+    'compressor'
 ]
 
 MIDDLEWARE = [
@@ -126,6 +129,14 @@ SITE_PAGES_DIRECTORY = BASE_DIR/"site_pages/pages"
 #to store the static data for deployment purposes
 SITE_OUTPUT_DIRECTORY = os.path.join(BASE_DIR/"site_pages/","_build")
 STATIC_ROOT = os.path.join(BASE_DIR/"site_pages","_build","static")
+
+#For chaching the static files
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
